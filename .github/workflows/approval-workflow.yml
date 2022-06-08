@@ -3,3 +3,9 @@ on: pull_request_review
 jobs:
   labelWhenApproved:
     runs-on: ubuntu-latest
+    steps:
+    - name: I will label your job
+    env:
+      APPROVALS: "1"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ADD_LABEL: "my label"
